@@ -98,26 +98,83 @@ body{
   opacity: 1;
   transition: 0.3s;
 }
+
+/*   */
+
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 250px;
+  top: 0;
+  left: 0;
+  background-color: #424242;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidepanel a:hover {
+  color: #f1f1f1;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color:#444;
+}
 .button3:hover{opacity: 0.6}
 .button4:hover{opacity: 0.7}
 
 </style>
+<script>
+function openNav() {
+  document.getElementById("mySidepanel").style.width = "250px";
+}
 
+function closeNav() {
+  document.getElementById("mySidepanel").style.width = "0";
+}
+</script>
 <title>
 Phones Available
 </title>
 
 </head>
 <body> 
-
+<%!
+	int i=1;
+	%>
 	<c:if test="${active==0 }">
 	 	<a href="viewActivatedPhones"><button  class="button"><span>View Active Phones</span></button></a><br/>
 	</c:if>
 	<c:if test="${active==1 }">
  	<a href="viewAllPhones"><button class="button"><span>View All Phones</span></button></a><br/><br/>
 	</c:if>
-
- 	
+	
 		<table bgcolor= #D8D8D8 border=1 rules=all>
 
 	<thead>
@@ -130,7 +187,22 @@ Phones Available
 	</thead>
 	<c:forEach var="phonerow" items="${list}"> 
 	<tr>
-	<td>${phonerow.id}</td>
+	<td>
+	<div id="mySidepanel" class="sidepanel">
+	
+	<span id="something">
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+ 	
+ 		${phonerow.make}
+		<%=i++ %>
+	
+	</span>
+	
+</div>
+	<button class="openbtn" onclick="openNav()">
+	${phonerow.id}
+	</button> 
+	</td>
 	<td>${phonerow.make}</td>
 	<td>${phonerow.model}</td>
 	<td align="center">${phonerow.version}</td> 
@@ -142,9 +214,10 @@ Phones Available
 	<td><a href="editPhone/${phonerow.id}"><button class="button2" >Edit</button></a></td>	
 		
 	<c:if test="${phonerow.activation ==1}">
-	<td><a href="deletePhone/${phonerow.id}/${active}"><button class="button3">Delete</button></a></td>
+	<td><a href="deletePhone/${phonerow.id}"><button class="button3">Delete</button></a></td>
 	</c:if>
 	<c:if test="${phonerow.activation ==0}">
+	
 	<td><a href="reactivatePhone/${phonerow.id}"><button class="button4">Reactivate</button></a></td>
 	</c:if>
 	
@@ -152,6 +225,10 @@ Phones Available
 	</tr>	
 	</c:forEach>
 	</table>
+
+<script>
+var x=getElementBy
+</script>
 	
 </body>
 </html>

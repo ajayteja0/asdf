@@ -6,8 +6,25 @@ public class Phone {
 	private String model;
 	private int version;
 	private int price;
+	private int activation;
+	private String modifiedDate;
+	private String creationDate;
+	
+	
+	public String getCreationDate() {
+		return creationDate;
+	}
+	public void setCreationDate(String creationDate) {
+		this.creationDate = creationDate;
+	}
 	public void setId(int id) {
 		this.id=id;
+	}
+	public String getModifiedDate() {
+		return modifiedDate;
+	}
+	public void setModifiedDate(String modifiedDate) {
+		this.modifiedDate = modifiedDate;
 	}
 	public int getId() {
 		return id;
@@ -35,5 +52,11 @@ public class Phone {
 	}
 	public String getModel() {
 		return model;
+	}
+	public void setActivation(int activation) {
+		this.activation=activation;
+	}
+	public int getActivation() {
+		return activation;
 	}
 }

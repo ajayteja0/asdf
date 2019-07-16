@@ -5,16 +5,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script>
+</script>
+
 <meta charset="UTF-8">
 <title>Edit Phone Info</title>
 </head>
 <body>
-<form:form method="POST" action="/asdf/editPhoneSave">
-	Maker<form:input path="make"/><br/>
-	Model<form:input path="model"/><br/>
-	Version<form:input path="version"/><br/>
-	Price<form:input path="price"/><br/>
+<form:form name ="Edit" method="GET" action="/asdf/editPhoneSave">
+	
+	<table>
+	<form:input type="hidden" path="id" />
+	
+	<tr>
+	<td><form:label path="make">Maker</form:label></td>
+	<td><form:input path="make"/><br/></td>
+	</tr>
+	
+	<tr>
+	<td><form:label path="model">Model</form:label></td>
+	<td><form:input path="model"/><br/></td>
+	</tr>
+	
+	
+	<tr>
+	<td><form:label path="version">Version</form:label></td>
+	<td><form:input  path="version" /><br/></td>
+	</tr>
+	
+	<tr>
+	<td><form:label path="price">Price</form:label></td>
+	<td><form:input  path="price"/><br/></td>
+	</tr>
+	
+		</table>
+	
 	<input type="submit" value="Save the Edits"/>
+
+	
+
 </form:form>
 </body>
 </html>

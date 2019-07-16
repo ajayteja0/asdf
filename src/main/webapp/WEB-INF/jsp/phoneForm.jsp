@@ -6,19 +6,42 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script>
+function intcheck1() {
+	  var x = document.getElementById("version").value;
+	  if(isNaN(x))
+	  document.getElementById("demo1").innerHTML = " Enter a valid number";
+	  else	
+		  document.getElementById("demo1").innerHTML =" ";	
+
+}
+function intcheck2() {
+	  var x = document.getElementById("price").value;
+	  if(isNaN(x))
+	  document.getElementById("demo2").innerHTML = " Enter a valid number";
+	  else	
+		  document.getElementById("demo2").innerHTML =" ";	
+	}
+</script>
 <title>ADD PHONES</title>
 </head>
 <body>
+
 <h1>Add a new Phone</h1>
 
 <form:form method="post" action="savePhone">  
-	Maker<form:input path="make"/><br/>
-	Model<form:input path="model"/><br/>
-	Version<form:input path="version"/><br/>
-	Price<form:input path="price"/><br/>
+	<table>
+	<tr><td>Maker</td><td><form:input path="make"/></td></tr>
+	<tr><td>Model</td><td><form:input path="model"/></td></tr>
+	<tr><td>Version</td><td><form:input id="version" path="version" onkeyup="intcheck1()"/></td>
+	<td><span id="demo1"></span></td></tr>
+	<tr><td>Price</td><td><form:input id="price" path="price" onkeyup="intcheck2()"/></td>
+	<td><font color="red"><span id="demo2"></span></font></td></tr>
+	</table>
 	<input type="submit" value="Add Phone"/>
 
 
 </form:form>
+
 </body>
 </html>

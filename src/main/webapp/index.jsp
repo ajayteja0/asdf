@@ -3,15 +3,23 @@
 <head>
 
 <style>
-div{
-border: 20px groove #E74C3C;
-display: table-cell;
-border-radius: 200px;
-animation: spin 15s linear infinite;
+.button {
+  background-color: #4CAF50; /* Green */
+ 
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 }
-@keyframes spin{
-from{ transform: rotate(0deg) }
-to{ transform: rotate(360deg) }
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 </style>
 <title>Phone Page</title>
@@ -20,7 +28,7 @@ to{ transform: rotate(360deg) }
 <marquee>This Portal lets you add or view phones</marquee>
 
 <center>
-<a href="phoneForm"><button>Add a new Phone</button></a>
+<a href="phoneForm"><button class="button">Add a new Phone</button></a>
 <br/>
 <div>
 <div>
@@ -31,7 +39,7 @@ to{ transform: rotate(360deg) }
 </div>
 </div>
 </div>
-<a href="viewPhones"><button>View all Phones</button></a>
+<a href="viewActivatedPhones"><button class="button">View all Phones</button></a>
 </center>
 </body>
 </html>

@@ -15,6 +15,7 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 <property name="suffix" value=".jsp"></property>
 </bean>
 
+
 <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
 <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>  
 <property name="url" value="jdbc:mysql://localhost:3306/test"></property>  
@@ -29,4 +30,5 @@ http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 <bean id="PhoneDao" class="aPackage.PhoneDao">
 <property name="template" ref="jt"></property>
 </bean>
+
 </beans>
